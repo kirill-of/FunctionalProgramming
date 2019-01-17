@@ -15,6 +15,10 @@ public class Step1 {
      */
 
     public static void main(String[] args) {
-        System.out.println("main");
+
+        S7 str7 = (s1, s2, s3, s4, s5, s6, s7) -> (s1 + s2 + s3 + s4 + s5 + s6 + s7).toUpperCase();
+
+
+        System.out.println(str7.concat("The", "lambda", "has", "too", "many", "string", "arguments."));
     }
 }
