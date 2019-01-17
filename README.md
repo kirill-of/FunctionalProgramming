@@ -1,4 +1,4 @@
-# FunctionalProgramming
+# Functional Programming
 **Course "Java. Functional programming"**
 
 About the course
