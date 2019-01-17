@@ -9,6 +9,7 @@ The course consists of theory lessons, examples and practice exercises including
 
 The course consists of two separated modules: theory lessons (1) and practical lessons (2).
 
+
 1. Theory lessons "Java. Functional programming" 
 
 1.1 The general course information
