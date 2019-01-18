@@ -1,4 +1,4 @@
-package pro.ofitserov.stepik.functionalProgramming.practicalLessons.t2;
+package pro.ofitserov.stepik.functionalprogramming.practicallessons.t2;
 
 import java.util.function.IntBinaryOperator;
 

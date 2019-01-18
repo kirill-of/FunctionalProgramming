@@ -1,4 +1,4 @@
-package pro.ofitserov.stepik.functionalProgramming.practicalLessons.t5;
+package pro.ofitserov.stepik.functionalprogramming.practicallessons.t5;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package pro.ofitserov.stepik.functionalProgramming.practicalLessons.t3;
+package pro.ofitserov.stepik.functionalprogramming.practicallessons.t3;
 
 public class Step1 {
 

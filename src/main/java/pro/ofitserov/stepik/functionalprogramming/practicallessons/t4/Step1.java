@@ -1,4 +1,4 @@
-package pro.ofitserov.stepik.functionalProgramming.practicalLessons.t4;
+package pro.ofitserov.stepik.functionalprogramming.practicallessons.t4;
 
 import java.util.function.LongBinaryOperator;
 import java.util.stream.LongStream;
