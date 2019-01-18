@@ -1,5 +1,7 @@
 package pro.ofitserov.stepik.functionalprogramming.practicallessons.t6;
 
+import java.util.function.UnaryOperator;
+
 public class Step2 {
 
     /**
@@ -9,8 +11,13 @@ public class Step2 {
      * Solution format. Submit your lambda expression in any valid format with ; on the end.
      * Examples: (x, y) -> x + y; (x, y) -> { return x + y; }
      */
-    
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        final String prefix = "prefix";
+        final String suffix = "suffix";
+
+        UnaryOperator<String> stringUnaryOperator = str -> prefix + str.trim() + suffix;
+
+        System.out.println(stringUnaryOperator.apply("string"));
     }
 }
