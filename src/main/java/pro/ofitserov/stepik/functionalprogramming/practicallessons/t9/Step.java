@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 public class Step {
 
     /**
+     * 2.9 Behaviour parametrization with lambda expressions
      * You have a class Account (number: String, balance: Long, isLocked: boolean), the list accounts of type List<Account> and the method filter(List<T> elems, Predicate<T> predicate) for filtering the given list of type T by the predicate.
      * The class Account has the next methods: getNumber(), getBalance(), isLocked() for getting the values of the corresponding fields.
      * <p>

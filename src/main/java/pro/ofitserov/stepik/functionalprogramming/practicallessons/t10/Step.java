@@ -2,6 +2,7 @@ package pro.ofitserov.stepik.functionalprogramming.practicallessons.t10;
 
 public class Step {
     /**
+     * 2.10 Your own functional interface
      * You need to write your own functional interface (TernaryIntPredicate) and use it with a lambda expression. The interface must have a single non-static (and non-default) method test with three int arguments that returns boolean value.
      * <p>
      * Besides, you need to write a lambda expression with three int arguments using your TernaryIntPredicate.
