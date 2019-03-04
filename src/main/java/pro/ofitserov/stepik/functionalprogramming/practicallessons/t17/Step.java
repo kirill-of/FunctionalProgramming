@@ -33,9 +33,12 @@ public class Step {
      */
     public static boolean isPrime(final long number) {
         // write your code here
+
+        //return LongStream.range(2, number / 2 + 1).noneMatch(i -> number % i == 0);
+
         //return LongStream.rangeClosed(2, number).filter(i -> number % i == 0).count() == 1;
 
-        return LongStream.range(2, number / 2 + 1).noneMatch(i -> number % i == 0);
+        return LongStream.range(2, number).noneMatch(i -> number % i == 0);
     }
 
     public static void main(String[] args) {
