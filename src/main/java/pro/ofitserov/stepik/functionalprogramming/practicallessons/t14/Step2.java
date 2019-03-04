@@ -1,6 +1,8 @@
 package pro.ofitserov.stepik.functionalprogramming.practicallessons.t14;
 
 
+import lombok.ToString;
+
 import java.security.MessageDigest;
 import java.util.Base64;
 
@@ -14,18 +16,17 @@ public class Step2 {
 
         // !!! write a method handle that accept request and returns new request here
         // it allows to use lambda expressions for creating handlers below
-
-        String str = "";
-
-        String getData();
-
-
+        Request handle(Request request);
 
         // !!! write a default method for combining this and other handler single one
         // the order of execution may be any but you need to consider it when composing handlers
         // the method may has any name
-
-        //default
+        default RequestHandler setSuccessor(RequestHandler other) {
+            return (req) -> {
+                //return this.handle(var1.handle(var2));
+                return other.handle(this.handle(req));
+            };
+        }
     }
 
     /**
@@ -60,12 +61,13 @@ public class Step2 {
      * The format: commonRequestHandler = handler1.setSuccessor(handler2.setSuccessor(...))
      * The combining method setSuccessor may has another name
      */
-    final static RequestHandler commonRequestHandler = // !!! write the combining of existing handlers here
+    final static RequestHandler commonRequestHandler = wrapInTransactionTag.setSuccessor(createDigest).setSuccessor(wrapInRequestTag);
 
     /**
      * Immutable class for representing requests.
      * If you need to change the request data then create new request.
      */
+    @ToString
     static class Request {
         private final String data;
 
@@ -76,5 +78,9 @@ public class Step2 {
         public String getData() {
             return data;
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(commonRequestHandler.handle(new Request("mydata")));
     }
 }
