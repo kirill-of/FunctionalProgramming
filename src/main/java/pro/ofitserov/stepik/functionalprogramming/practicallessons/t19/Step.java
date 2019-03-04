@@ -1,5 +1,6 @@
 package pro.ofitserov.stepik.functionalprogramming.practicallessons.t19;
 
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Step {
@@ -25,7 +26,7 @@ public class Step {
     }
 
     public static void main(String[] args) {
-        createFilteringStream(IntStream.of(2, 4), IntStream.of(1, 3)).forEach(System.out::println);
-        createFilteringStream(IntStream.of(30, 60, 90), IntStream.of(75)).forEach(System.out::println);
+        System.out.println(createFilteringStream(IntStream.of(2, 4), IntStream.of(1, 3)).boxed().collect(Collectors.toList()));
+        System.out.println(createFilteringStream(IntStream.of(30, 60, 90), IntStream.of(75)).boxed().collect(Collectors.toList()));
     }
 }
