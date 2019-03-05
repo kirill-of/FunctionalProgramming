@@ -14,7 +14,7 @@ public class Utils {
     private Utils() {
     }
 
-    public static <T> List<T> getListFromJSON(T typeDef, String resourceName, Class tClass) throws IOException {
+    public static <T> List<T> getListFromJSON(String resourceName, Class tClass) throws IOException {
         List<T> list;
         TypeFactory t = TypeFactory.defaultInstance();
         list = mapper.readValue(new File(resourceName), t.constructCollectionType(ArrayList.class, tClass));

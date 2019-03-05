@@ -35,7 +35,7 @@ public class Step {
     }
 
     public static void main(String[] args) throws Exception {
-        List<Department> departments = Utils.getListFromJSON(new Department(), "src\\main\\java\\pro\\ofitserov\\stepik\\functionalprogramming\\practicallessons\\t23\\examples.json", Department.class);
+        List<Department> departments = Utils.getListFromJSON("src\\main\\java\\pro\\ofitserov\\stepik\\functionalprogramming\\practicallessons\\t23\\examples.json", Department.class);
 
         System.out.println(departments);
 
