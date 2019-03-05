@@ -1,11 +1,7 @@
 package pro.ofitserov.stepik.functionalprogramming.practicallessons.t23;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.TypeFactory;
+import pro.ofitserov.stepik.functionalprogramming.practicallessons.Utils;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,8 +19,6 @@ import java.util.List;
 
 public class Step {
 
-    private static ObjectMapper mapper = new ObjectMapper();
-
     /**
      * Calculates the number of employees with salary >= threshold (only for 111- departments)
      *
@@ -35,23 +29,16 @@ public class Step {
     public static long calcNumberOfEmployees(List<Department> departments, long threshold) {
         return departments.stream()
                 .filter(department -> department.code.startsWith("111-"))
-                .map(department -> department.employees)
-                .flatMap(employees -> employees.stream())
-                .filter(employee -> employee.salary >= threshold).
-                        count();
+                .flatMap(department -> department.employees.stream())
+                .filter(employee -> employee.salary >= threshold)
+                .count();
     }
 
     public static void main(String[] args) throws Exception {
-        List<Department> departments = getListFromJSON(new Department(), "src\\main\\java\\pro\\ofitserov\\stepik\\functionalprogramming\\practicallessons\\t23\\examples.json", Department.class);
+        List<Department> departments = Utils.getListFromJSON(new Department(), "src\\main\\java\\pro\\ofitserov\\stepik\\functionalprogramming\\practicallessons\\t23\\examples.json", Department.class);
+
         System.out.println(departments);
 
         System.out.println(calcNumberOfEmployees(departments, 20_000));
-    }
-
-    private static <T> List<T> getListFromJSON(T typeDef, String resourceName, Class tClass) throws IOException {
-        List<T> list;
-        TypeFactory t = TypeFactory.defaultInstance();
-        list = mapper.readValue(new File(resourceName), t.constructCollectionType(ArrayList.class, tClass));
-        return list;
     }
 }
