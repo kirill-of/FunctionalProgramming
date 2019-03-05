@@ -5,6 +5,10 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * 2.22 Understanding of flatMap together with stream creating
+ */
+
 public class Step {
     public static void main(String[] args) {
 
