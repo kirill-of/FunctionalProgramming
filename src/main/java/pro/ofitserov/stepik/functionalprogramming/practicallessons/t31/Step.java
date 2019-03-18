@@ -12,7 +12,7 @@ import java.util.stream.LongStream;
 public class Step {
 
     public static LongStream createPrimesFilteringStream(long rangeBegin, long rangeEnd) {
-        return LongStream.rangeClosed(rangeBegin, rangeEnd).filter(NumberUtils::isPrime).parallel();
+        return LongStream.rangeClosed(rangeBegin, rangeEnd).parallel().filter(NumberUtils::isPrime);
     }
 
     public static void main(String[] args) {
